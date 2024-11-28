@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="responsive_dashboard.css">
+    <script src="responsive_dashboard.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!--Script for Graph Component-->
+</head>
+
+<!-- Left Starts -->
+<body class="darkmode">
+    <nav class="main-menu">
+      <div>
+        <div class="user-info">
+        <!--User profile Image --><img
+            src="smsir.jpeg"
+            alt="user" />
+         <!--User Name--> <p>User Name</p>
+        </div>
+        <ul>
+          <li class="nav-item active">
+            <a href="#">
+              <span class="nav-text">Profile</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#">
+              <span class="nav-text">Add MQTT Connections</span>
+            </a><br><br>
+          </li>
+
+          <li class="nav-item">
+            <a href="#">
+             <span class="nav-text">Trending</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="location_globe.html">
+            <span class="nav-text">Location</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="https://docs.google.com/document/d/e/2PACX-1vRVuySgsy19I5JAjR-6950KBK0r0ybb9YgP3E6F38neSVk2L8oUFkz2SNXECryOOKSMjaz6t6UhorSm/pub" target="blank">
+          <span class="nav-text">Documentation</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" target="blank">
+              <span class="nav-text">Developer Section</span>
+            </a>
+          </li>
+      <br>
+          <li class="nav-item">
+          <a href="https://cse.iitkgp.ac.in/~smisra/swan/" target="blank">
+            <span class="nav-text">SWAN Lab</span>
+          </a>
+        </li>
+<br>
+        <li class="nav-item">
+          <a href="#" target="blank">
+            <span class="nav-text">Logout</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#">
+            <span class="nav-text">&copy; 2025</span>
+          </a>
+        </li>
+        
+        
+      
+      </ul>
+        
+      </div>
+    </nav>
+
+
+<!-- Left ends -->
+
+
+<!-- Center Starts -->
+    <section class="content">
+      <div class="left-content">
+        <div class="search-and-check">
+          <form class="search-box">
+            <input type="text" placeholder="Search for your Dashboard..." />
+            <i class="bx bx-search"></i>
+          </form>
+          <div class="interaction-control-mobile interactions">
+            </div>
+        </div>
+<!-- Below two picture tags are for the logo of SWAN and the first tag has logo for light theme and the other has logo for dark theme -->
+ <!-- The Three Images in a div are for different devices such as mobile tablet and desktop -->
+        <div class="header">
+          <picture class="morning-img hidden">
+            <img
+              class="header-mobile"
+              src="SWAN-Logo (Custom mobile).png"
+              alt="" />
+              <!--622 x 378-->
+            <img
+              class="header-tablet"
+              src="SWAN-Logo (Custom tablet).png"
+              alt="" />
+              <!-- 925 x 508 -->
+            <img
+              class="header-desktop"
+              src="SWAN-Logo (Custom laptop).png"
+              alt="" />
+              <!-- 1500 x 508 -->
+          </picture>
+
+          <picture class="night-img">
+            <img
+              class="header-mobile"
+              src="SWAN-Logo (Custom mobile).png"
+              alt="" />
+            <img
+              class="header-tablet"
+              src="SWAN-Logo (Custom tablet).png"
+              alt="" />
+            <img
+              class="header-desktop"
+              src="SWAN-Logo (Custom laptop).png"
+              alt="" />
+          </picture>
+        </div>
+
+        <div class="upcoming-events">
+          <h1>Dashboards</h1>
+          <div class="event-container">
+
+
+            <!-- <div class="card event-card">
+              <div class="event-header">
+                <img
+                  src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/697ef286-1104-4c6c-91d6-0b2a1e04009b"
+                  alt="" />
+                <p>March 19, 8:00 PM</p>
+                <i class="bx bx-heart like-btn"></i>
+              </div>
+              <div class="event-content">
+                <h2>Acoustic Serenade Under the Stars</h2>
+                <p>Skyline Amphitheater</p>
+              </div>
+              <div class="event-footer">
+                <p style="background-color: #e48e2c">Concert</p>
+                <div class="btn-group">
+                  <button>Buy Ticket</button>
+                  <div class="share">
+                    <button class="share-btn">
+                      <i class="fa-solid fa-share"></i>
+                    </button>
+                    <ul class="popup">
+                      <li>
+                        <a href="#" style="color: rgb(79, 153, 213)"
+                          ><i class="bx bxl-twitter"></i
+                        ></a>
+                      </li>
+                      <li>
+                        <a href="#" style="color: rgb(34, 173, 34)"
+                          ><i class="bx bxl-whatsapp"></i
+                        ></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+
+         <div class="card event-card">
+              <div class="event-header">
+                <img
+                  src="default_graph.png"
+                  alt="Graph">
+                <p>March 19, 8:00 PM</p>
+                <i class="bx bx-heart like-btn"></i>
+              </div>
+              <div class="event-content">
+                <h2>Dashboard 1</h2>
+                <p>Skyline Amphitheater</p>
+              </div>
+              <div class="event-footer">
+                <p style="background-color: #e48e2c">Edit</p>
+                <div class="btn-group">
+                  <button>Resize</button>
+                  </div>
+              </div>
+            </div>
+
+            <div class="card event-card">
+              <div class="event-header">
+                <img
+                  src="default_graph.png"
+                  alt="Graph">
+                <p>March 19, 8:00 PM</p>
+                <i class="bx bx-heart like-btn"></i>
+              </div>
+              <div class="event-content">
+                <h2>Dashboard 2</h2>
+                <p>Skyline Amphitheater</p>
+              </div>
+              <div class="event-footer">
+                <p style="background-color: #e48e2c">Edit</p>
+                <div class="btn-group">
+                  <button>Resize</button>
+                  </div>
+              </div>
+            </div>
+
+            <div class="card event-card">
+              <div class="event-header">
+                <img
+                  src="default_graph.png"
+                  alt="Graph">
+                <p>March 19, 8:00 PM</p>
+                <i class="bx bx-heart like-btn"></i>
+              </div>
+              <div class="event-content">
+                <h2>Dashboard 3</h2>
+                <p>Skyline Amphitheater</p>
+              </div>
+              <div class="event-footer">
+                <p style="background-color: #e48e2c">Edit</p>
+                <div class="btn-group">
+                  <button>Resize</button>
+                  </div>
+              </div>
+            </div>
+
+            <div class="card event-card">
+              <div class="event-header">
+                <img
+                  src="default_graph.png"
+                  alt="Graph">
+                <p>March 19, 8:00 PM</p>
+                <i class="bx bx-heart like-btn"></i>
+              </div>
+              <div class="event-content">
+                <h2>Dashboard 4</h2>
+                <p>Skyline Amphitheater</p>
+              </div>
+              <div class="event-footer">
+                <p style="background-color: #e48e2c">Edit</p>
+                <div class="btn-group">
+                  <button>Resize</button>
+                  </div>
+              </div>
+            </div>
+
+            <div class="card event-card">
+              <div class="event-header">
+                <img
+                  src="default_graph.png"
+                  alt="Graph">
+                <p>March 19, 8:00 PM</p>
+                <i class="bx bx-heart like-btn"></i>
+              </div>
+              <div class="event-content">
+                <h2>Dashboard 5</h2>
+                <p>Skyline Amphitheater</p>
+              </div>
+              <div class="event-footer">
+                <p style="background-color: #e48e2c">Edit</p>
+                <div class="btn-group">
+                  <button>Resize</button>
+                  </div>
+              </div>
+            </div>
+
+            <div class="card event-card">
+              <div class="event-header">
+                <img
+                  src="default_graph.png"
+                  alt="Graph">
+                <p>March 19, 8:00 PM</p>
+                <i class="bx bx-heart like-btn"></i>
+              </div>
+              <div class="event-content">
+                <h2>Dashboard 6</h2>
+                <p>Skyline Amphitheater</p>
+              </div>
+              <div class="event-footer">
+                <p style="background-color: #e48e2c">Edit</p>
+                <div class="btn-group">
+                  <button>Resize</button>
+                  </div>
+              </div>
+            </div>
+
+            <div class="card event-card">
+              <div class="event-header">
+                <img
+                  src="default_graph.png"
+                  alt="Graph">
+                <p>March 19, 8:00 PM</p>
+                <i class="bx bx-heart like-btn"></i>
+              </div>
+              <div class="event-content">
+                <h2>Dashboard 7</h2>
+                <p>Skyline Amphitheater</p>
+              </div>
+              <div class="event-footer">
+                <p style="background-color: #e48e2c">Edit</p>
+                <div class="btn-group">
+                  <button>Resize</button>
+                  </div>
+              </div>
+            </div>
+
+            <div class="card event-card">
+              <div class="event-header">
+                <img
+                  src="default_graph.png"
+                  alt="Graph">
+                <p>March 19, 8:00 PM</p>
+                <i class="bx bx-heart like-btn"></i>
+              </div>
+              <div class="event-content">
+                <h2>Dashboard 8</h2>
+                <p>Skyline Amphitheater</p>
+              </div>
+              <div class="event-footer">
+                <p style="background-color: #e48e2c">Edit</p>
+                <div class="btn-group">
+                  <button>Resize</button>
+                  </div>
+              </div>
+            </div>
+
+            <div class="card event-card">
+              <div class="event-header">
+                <img
+                  src="default_graph.png"
+                  alt="Graph">
+                <p>March 19, 8:00 PM</p>
+                <i class="bx bx-heart like-btn"></i>
+              </div>
+              <div class="event-content">
+                <h2>Dashboard 9</h2>
+                <p>Skyline Amphitheater</p>
+              </div>
+              <div class="event-footer">
+                <p style="background-color: #e48e2c">Edit</p>
+                <div class="btn-group">
+                  <button>Resize</button>
+                  </div>
+              </div>
+            </div>
+
+            <div class="card event-card">
+              <div class="event-header">
+                <img
+                  src="default_graph.png"
+                  alt="Graph">
+                <p>March 19, 8:00 PM</p>
+                <i class="bx bx-heart like-btn"></i>
+              </div>
+              <div class="event-content">
+                <h2>Dashboard 10</h2>
+                <p>Skyline Amphitheater</p>
+              </div>
+              <div class="event-footer">
+                <p style="background-color: #e48e2c">Edit</p>
+                <div class="btn-group">
+                  <button>Resize</button>
+                  </div>
+              </div>
+            </div>
+
+            <div class="card event-card">
+              <div class="event-header">
+                <img
+                  src="default_graph.png"
+                  alt="Graph">
+                <p>March 19, 8:00 PM</p>
+                <i class="bx bx-heart like-btn"></i>
+              </div>
+              <div class="event-content">
+                <h2>Dashboard 11</h2>
+                <p>Skyline Amphitheater</p>
+              </div>
+              <div class="event-footer">
+                <p style="background-color: #e48e2c">Edit</p>
+                <div class="btn-group">
+                  <button>Resize</button>
+                  </div>
+              </div>
+            </div>
+<br>
+            <body class="graphbody">
+              <h1>Graph Parameter Selection</h1>
+                          <div class="graph-selector-container">
+                  <div>
+                      <label for="graphLocation">Select Location:</label>
+                      <select id="graphLocation">
+                          <option>Location 1</option>
+                          <option>Location 2</option>
+                          <option>Location 3</option>
+                      </select>
+                  </div>
+          
+                  <div>
+                      <label for="graphDatabase">Select Database:</label>
+                      <select id="graphDatabase">
+                          <option>Database A</option>
+                          <option>Database B</option>
+                          <option>Database C</option>
+                      </select>
+                  </div>
+          
+                  <div>
+                      <label for="graphTable">Select Table:</label>
+                      <select id="graphTable">
+                          <option>Table X</option>
+                          <option>Table Y</option>
+                          <option>Table Z</option>
+                      </select>
+                  </div>
+          
+                  <div>
+                      <label for="graphSensor">Select Sensor:</label>
+                      <select id="graphSensor">
+                          <option>Sensor 1</option>
+                          <option>Sensor 2</option>
+                          <option>Sensor 3</option>
+                      </select>
+                  </div>
+          
+                  <div>
+                      <label for="graphUnit">Choose Unit:</label>
+                      <select id="graphUnit">
+                          <option>Unit A</option>
+                          <option>Unit B</option>
+                          <option>Unit C</option>
+                      </select>
+                  </div>
+              </div>
+          
+              <div class="graph-toolbar">
+                  <button onclick="graphCreatePlot()">Submit</button>
+              </div>
+          
+              <div id="graphMainContainer"></div>
+          
+              <div class="graph-toolbar" id="graphEditToolbar" style="display: none;">
+                  <button onclick="graphEditName()">Edit Graph Name</button>
+                  <button onclick="graphEditScaleAndUnit()">Edit Scale/Unit</button>
+                  <button onclick="graphEditType()">Edit Graph Type</button>
+                  <button onclick="graphLabelAxis()">Label Axis</button>
+                  <button onclick="graphDeletePlot()">Delete Graph</button>
+              </div>
+          
+
+
+
+
+
+
+
+
+
+          </div>
+        </div>
+        </div>
+      </div>
+
+
+<!-- center ends -->
+
+<!-- Right Starts -->
+      <div class="right-content">
+        <div class="interaction-control interactions">
+        </div>
+
+        <div class="analytics">
+          <h1>Analytics</h1>
+          <div class="analytics-container">
+            <div class="total-events">
+              <div class="event-number card">
+                <h2>Number of Dashboards</h2>
+                <p>20</p>
+                <i class="bx bx-check-circle"></i>
+              </div>
+              <div class="event-number card">
+                <h2>Number of MQTT Connections to Database</h2>
+                <p>3</p>
+                <i class="bx bx-timer"></i>
+              </div>
+            </div>
+            <br>
+            <div class="total-events">
+              <div class="event-number card">
+                <h2>Number of External Databases Connected</h2>
+                <p>20</p>
+                <i class="bx bx-check-circle"></i>
+              </div>
+              <div class="event-number card">
+                <h2>QR Code</h2>
+                <p>Scan to view</p>
+                <!-- <i class="bx bx-timer"></i> -->
+                 <img class="qrcode" src="qrcode.png" alt="QR Code">
+              </div>
+            </div>
+            <br>
+            <hr>
+            <div class="chart" id="doughnut-chart">
+              <h2>Your Dashboards</h2>
+              <!-- <canvas id="doughnut"></canvas> -->
+              <ul>
+                <li><a href="https://example.com/dashboard1" target="blank">Dashboard 1</a></li>
+                <li><a href="https://example.com/dashboard2" target="blank">Dashboard 2</a></li>
+                <li><a href="https://example.com/dashboard3" target="blank">Dashboard 3</a></li>
+                <li><a href="https://example.com/dashboard4" target="blank">Dashboard 4</a></li>
+                <li><a href="https://example.com/dashboard5" target="blank">Dashboard 5</a></li>
+                <li><a href="https://example.com/dashboard6" target="blank">Dashboard 6</a></li>
+                <li><a href="https://example.com/dashboard7" target="blank">Dashboard 7</a></li>
+                <li><a href="https://example.com/dashboard8" target="blank">Dashboard 8</a></li>
+                <li><a href="https://example.com/dashboard9" target="blank">Dashboard 9</a></li>
+                <li><a href="https://example.com/dashboard10" target="blank">Dashboard 10</a></li>
+                <li><a href="https://example.com/dashboard11" target="blank">Dashboard 11</a></li>
+                <li><a href="https://example.com/dashboard12" target="blank">Dashboard 12</a></li>
+                <li><a href="https://example.com/dashboard13" target="blank">Dashboard 13</a></li>
+                <li><a href="https://example.com/dashboard14" target="blank">Dashboard 14</a></li>
+                <li><a href="https://example.com/dashboard15" target="blank">Dashboard 15</a></li>
+                <li><a href="https://example.com/dashboard16" target="blank">Dashboard 16</a></li>
+                <li><a href="https://example.com/dashboard17" target="blank">Dashboard 17</a></li>
+                <li><a href="https://example.com/dashboard18" target="blank">Dashboard 18</a></li>
+                <li><a href="https://example.com/dashboard19" target="blank">Dashboard 19</a></li>
+                <li><a href="https://example.com/dashboard20" target="blank">Dashboard 20</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <!--Loads log file from server for specific user-->
+        <div class="contacts">
+            <h1>Activity Log</h1>
+            <div class="contacts-container">
+              <div class="contact-status">
+                <div class="contact-activity">
+                  <p>John viewed <span>Temperature Sensor Data</span></p>
+                </div>
+                <small>1 hour ago</small>
+              </div>
+          
+              <div class="contact-status">
+                <div class="contact-activity">
+                  <p>Emma analyzed <span>Humidity Trends Dashboard</span></p>
+                </div>
+                <small>4 hours ago</small>
+              </div>
+          
+              <div class="contact-status">
+                <div class="contact-activity">
+                  <p>Michael downloaded <span>Daily Power Usage Report</span></p>
+                </div>
+                <small>1 day ago</small>
+              </div>
+          
+              <div class="contact-status">
+                <div class="contact-activity">
+                  <p>Sophia explored <span>Live Motion Detection Feed</span></p>
+                </div>
+                <small>1 day ago</small>
+              </div>
+          
+              <div class="contact-status">
+                <div class="contact-activity">
+                  <p>David viewed <span>Air Quality Index Data</span></p>
+                </div>
+                <small>3 days ago</small>
+              </div>
+          
+              <div class="contact-status">
+                <div class="contact-activity">
+                  <p>Olivia exported <span>Historical Sensor Data Logs</span></p>
+                </div>
+                <small>6 days ago</small>
+              </div>
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <!-- Right ends -->
+
+    
+  </body>
+</html>
+
+

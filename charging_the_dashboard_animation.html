@@ -1,0 +1,166 @@
+<!-- https://codepen.io/cjgammon/pen/KKYYqwO -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: black;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+#app {
+  max-width: 1280px;
+  max-height: 100vh;
+  margin: 0 auto;
+  padding: 2rem;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+  video-on-hover{
+    aspect-ratio: 1;
+    width: 400px;
+    height: 400px;
+  }
+
+.youtube_button{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 2rem;
+}
+
+@media (max-width: 800px), (max-height: 800px) {
+  
+  video-on-hover{
+    transform-origin: center;
+    transform: scale(2);
+  }
+}
+    </style>
+
+</head>
+<body>
+    <div id="app">
+        <video-on-hover image="https://radiolights.com/CODEPEN/static.jpg" src="https://radiolights.com/CODEPEN/animation.mp4"></video-on-hover>
+      </div>
+
+      <script>
+        setTimeout(() => {
+          window.location.href = "https://example.com"; // Replace with your desired URL
+        }, 3000);
+      </script>
+    <script>
+        class VideoOnHover extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open" });
+
+    const container = document.createElement("div");
+    container.classList.add("container");
+    container.classList.add("animating");
+
+    const img = document.createElement("img");
+    img.src = this.getAttribute("image");
+    container.appendChild(img);
+
+    const video = document.createElement("video");
+    video.src = this.getAttribute("src");
+    video.loop = true;
+    video.muted = true;
+    video.autoplay = true;
+    container.appendChild(video);
+
+    const style = document.createElement("style");
+    style.textContent = `
+    :host{
+    display: block;
+    }
+    
+.container{
+  position: relative;
+width: 100%;
+height: 100%;
+cursor: pointer;
+}
+
+video{
+  width: 100%;
+}
+
+img{
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+transition: opacity 0.4s;
+}
+
+.container.animating > img {
+opacity: 0;
+}
+
+.container:hover > img {
+opacity: 0;
+}
+
+        `;
+
+    const shadowRoot = this.shadowRoot;
+    shadowRoot.appendChild(style);
+    shadowRoot.appendChild(container);
+
+   
+   container.addEventListener("mouseover", () => video.play());
+    container.addEventListener("mouseout", () => video.pause());
+    
+    setTimeout(() => {
+      container.classList.remove('animating')
+    }, 1000);
+  }
+}
+
+customElements.define("video-on-hover", VideoOnHover);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Enhanced MQTT WebSocket Client</title>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js"></script>
+   <style>
+       body { font-family: Arial, sans-serif; margin: 20px; }
+       #messages { height: 300px; overflow-y: scroll; border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; }
+       input, button { margin: 5px; padding: 5px; }
+   </style>
+</head>
+<body>
+   <h1>Enhanced MQTT WebSocket Client</h1>
+  
+   <div>
+       <input type="text" id="broker" value="10.14.96.104" placeholder="Broker Address">
+       <input type="number" id="port" value="9001" placeholder="Port">
+       <button onclick="connect()">Connect</button>
+       <button onclick="disconnect()">Disconnect</button>
+   </div>
+  
+   <div>
+       <input type="text" id="subscribeTopic" placeholder="Topic to Subscribe">
+       <button onclick="subscribeTopic()">Subscribe</button>
+   </div>
+  
+   <div id="messages"></div>
+  
+   <div>
+       <input type="text" id="publishTopic" placeholder="Topic to Publish">
+       <input type="text" id="message" placeholder="Message">
+       <button onclick="sendMessage()">Publish</button>
+   </div>
+  
+   <div id="status"></div>
+
+
+   <script>
+       let client;
+       let isConnected = false;
+
+
+       function setStatus(status) {
+           document.getElementById('status').innerHTML = status;
+       }
+
+
+       function connect() {
+           const broker = document.getElementById('broker').value;
+           const port = parseInt(document.getElementById('port').value);
+           client = new Paho.MQTT.Client(broker, port, "clientId-" + parseInt(Math.random() * 100000));
+
+
+           client.onConnectionLost = onConnectionLost;
+           client.onMessageArrived = onMessageArrived;
+
+
+           setStatus("Connecting...");
+           client.connect({
+               onSuccess: onConnect,
+               onFailure: function(e) {
+                   setStatus("Connection failed: " + e.errorMessage);
+               }
+           });
+       }
+
+
+       function disconnect() {
+           if (client && isConnected) {
+               client.disconnect();
+               setStatus("Disconnected");
+               isConnected = false;
+           }
+       }
+
+
+       function onConnect() {
+           setStatus("Connected");
+           isConnected = true;
+       }
+
+
+       function onConnectionLost(responseObject) {
+           if (responseObject.errorCode !== 0) {
+               setStatus("Connection lost: " + responseObject.errorMessage);
+           }
+           isConnected = false;
+       }
+
+
+       function onMessageArrived(message) {
+           const messageDiv = document.getElementById("messages");
+           messageDiv.innerHTML += `<p><strong>${message.destinationName}</strong>: ${message.payloadString}</p>`;
+           messageDiv.scrollTop = messageDiv.scrollHeight;
+       }
+
+
+       function subscribeTopic() {
+           if (!isConnected) {
+               setStatus("Not connected");
+               return;
+           }
+           const topic = document.getElementById("subscribeTopic").value;
+           client.subscribe(topic);
+           setStatus(`Subscribed to ${topic}`);
+       }
+
+
+       function sendMessage() {
+           if (!isConnected) {
+               setStatus("Not connected");
+               return;
+           }
+           const topic = document.getElementById("publishTopic").value;
+           const messageText = document.getElementById("message").value;
+           const message = new Paho.MQTT.Message(messageText);
+           message.destinationName = topic;
+           client.send(message);
+           setStatus(`Published to ${topic}`);
+       }
+   </script>
+</body>
+</html>
