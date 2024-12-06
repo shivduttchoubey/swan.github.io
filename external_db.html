@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unified API Form</title>
+  <style>
+    /* General Styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #2e004f, #1a1a2e);
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 500px;
+  background: #1a1a2e;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border: 1px solid #6a0572;
+}
+
+h1 {
+  text-align: center;
+  color: #b53dbe;
+  margin-bottom: 20px;
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #e3e3e3;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #6a0572;
+  border-radius: 5px;
+  background: #2e004f;
+  color: #ffffff;
+}
+
+input::placeholder {
+  color: #bbbbbb;
+}
+
+select {
+  cursor: pointer;
+}
+
+button {
+  background: #b53dbe;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #d76bff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Cloud Data Fetch Form</h1>
+    <form id="cloudForm">
+      <!-- Cloud Service Provider Dropdown -->
+      <div class="form-group">
+        <label for="provider">Cloud Service Provider</label>
+        <select id="provider" name="provider" required>
+          <option value="" disabled selected>Select a provider</option>
+          <option value="aws">AWS</option>
+          <option value="azure">Azure</option>
+          <option value="gcp">Google Cloud</option>
+          <option value="ibm">IBM Watson IoT</option>
+          <option value="custom">Custom Server</option>
+        </select>
+      </div>
+
+      <!-- Credentials -->
+      <div class="form-group">
+        <label for="apiKey">API Key/Token</label>
+        <input type="text" id="apiKey" name="apiKey" placeholder="Enter API Key" required>
+      </div>
+      <div class="form-group">
+        <label for="clientId">Client ID</label>
+        <input type="text" id="clientId" name="clientId" placeholder="Enter Client ID">
+      </div>
+      <div class="form-group">
+        <label for="clientSecret">Client Secret</label>
+        <input type="password" id="clientSecret" name="clientSecret" placeholder="Enter Client Secret">
+      </div>
+
+      <!-- Data Query Parameters -->
+      <div class="form-group">
+        <label for="deviceId">Device ID</label>
+        <input type="text" id="deviceId" name="deviceId" placeholder="Enter Device ID" required>
+      </div>
+      <div class="form-group">
+        <label for="startTime">Start Time</label>
+        <input type="datetime-local" id="startTime" name="startTime">
+      </div>
+      <div class="form-group">
+        <label for="endTime">End Time</label>
+        <input type="datetime-local" id="endTime" name="endTime">
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit">Fetch Data</button>
+    </form>
+  </div>
+</body>
+</html>
