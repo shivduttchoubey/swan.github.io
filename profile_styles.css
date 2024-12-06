@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #6A0DAD;  /* Purple background */
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    color: #fff;
+}
+
+.background-overlay {
+    background: rgba(0, 0, 0, 0.5); /* Overlay for contrast */
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.profile-card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 350px;
+    width: 100%;
+    animation: fadeIn 1s ease-in-out;
+    color: #333;
+}
+
+.profile-header {
+    background-color: #4CAF50;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.profile-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    animation: scaleIn 0.5s ease-in-out;
+}
+
+.user-name {
+    font-size: 24px;
+    font-weight: bold;
+    animation: slideInFromTop 1s ease-out;
+}
+
+.profile-details {
+    padding: 20px;
+    font-size: 16px;
+}
+
+.profile-details p {
+    margin-bottom: 15px;
+    animation: fadeInDetails 1s ease-out;
+}
+
+.decorative-text {
+    padding: 20px;
+    font-size: 14px;
+    color: #555;
+    font-style: italic;
+    text-align: center;
+    animation: fadeInText 2s ease-out;
+}
+
+.decorative-text p {
+    margin-bottom: 10px;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    0% {
+        transform: scale(0.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDetails {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    .profile-card {
+        max-width: 100%;
+        margin: 10px;
+    }
+
+    .profile-photo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .user-name {
+        font-size: 20px;
+    }
+
+    .profile-details {
+        font-size: 14px;
+    }
+
+    .decorative-text {
+        font-size: 12px;
+    }
+}
