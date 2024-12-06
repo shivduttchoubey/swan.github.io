@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Section</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .header {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: #4e54c8;
+            background: linear-gradient(90deg, #4e54c8 0%, #8f94fb 100%);
+            color: white;
+            border-radius: 10px;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+
+        .card {
+            border: none;
+            border-radius: 20px;
+            background: #ffffff;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 3px solid #4e54c8;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #4e54c8;
+        }
+
+        .card-text {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .card a {
+            text-decoration: none;
+            color: #4e54c8;
+            font-weight: 500;
+        }
+
+        .card a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 1rem;
+            background: #4e54c8;
+            color: white;
+            border-radius: 10px;
+        }
+
+        /* Animation for the cards */
+        .animate-card {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .developer-section h3 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #4e54c8;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="header">
+        <h1 class="animate__animated animate__fadeInDown">Developer Section</h1>
+        <p class="animate__animated animate__fadeInUp">Proudly presenting the team behind this initiative.</p>
+    </div>
+
+    <!-- Developer Section -->
+    <div class="container developer-section mt-5">
+        <h3>Meet the Team</h3>
+        <div class="row g-4">
+            <!-- Project Head -->
+            <div class="col-md-4 col-sm-6">
+                <div class="card text-center animate-card">
+                    <div class="card-body">
+                        <img src="https://via.placeholder.com/100" alt="Prof. Sudip Misra">
+                        <h5 class="card-title">Project Head</h5>
+                        <p class="card-text">Prof. Sudip Misra</p>
+                        <a href="#" target="_blank">Visit Profile</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Supervisors -->
+            <div class="col-md-4 col-sm-6">
+                <div class="card text-center animate-card">
+                    <div class="card-body">
+                        <img src="https://via.placeholder.com/100" alt="Supervisors">
+                        <h5 class="card-title">Project Supervisors</h5>
+                        <p class="card-text">Mr. Biswajit Ghosh</p>
+                        <p class="card-text">Mr. Atonu Ghosh</p>
+                        <a href="#" target="_blank">Visit Profile</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lead Developer -->
+            <div class="col-md-4 col-sm-6">
+                <div class="card text-center animate-card">
+                    <div class="card-body">
+                        <img src="https://via.placeholder.com/100" alt="Shiv Dutt Choubey">
+                        <h5 class="card-title">Lead Developer</h5>
+                        <p class="card-text">Shiv Dutt Choubey</p>
+                        <a href="#" target="_blank">Visit Portfolio</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer mt-5">
+        <p>A <strong>SWAN LAB Initiative</strong>. All rights reserved © 2024</p>
+    </div>
+
+    <script>
+        // GSAP Animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.animate-card');
+            gsap.to(cards, {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                stagger: 0.2,
+                ease: "power4.out",
+                delay: 0.5
+            });
+        });
+    </script>
+</body>
+</html>
