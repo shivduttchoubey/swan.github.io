@@ -281,71 +281,63 @@
 
 
 <br>
-<body class="graphbody">
-  <h1>Graph Parameter Selection</h1>
-  <div class="graph-selector-container">
-      <div>
-          <label for="graphLocation">Select Location:</label>
-          <select id="graphLocation">
-              <option>Location 1</option>
-              <option>Location 2</option>
-              <option>Location 3</option>
-          </select>
+<!-- Graph Parameter Selection -->
+<div class="graph-dashboard-container">
+  <div class="graph-controls">
+      <div class="graph-selector-container">
+          <div>
+              <label for="graphLocation">Select Location:</label>
+              <select id="graphLocation">
+                  <option>Location 1</option>
+                  <option>Location 2</option>
+                  <option>Location 3</option>
+              </select>
+          </div>
+          <div>
+              <label for="graphDatabase">Select Database:</label>
+              <select id="graphDatabase">
+                  <option>Database A</option>
+                  <option>Database B</option>
+                  <option>Database C</option>
+              </select>
+          </div>
+          <div>
+              <label for="graphTable">Select Table:</label>
+              <select id="graphTable">
+                  <option>Table X</option>
+                  <option>Table Y</option>
+                  <option>Table Z</option>
+              </select>
+          </div>
+          <div>
+              <label for="graphSensor">Select Sensor:</label>
+              <select id="graphSensor">
+                  <option>Sensor 1</option>
+                  <option>Sensor 2</option>
+                  <option>Sensor 3</option>
+              </select>
+          </div>
+          <div>
+              <label for="graphUnit">Choose Unit:</label>
+              <select id="graphUnit">
+                  <option>Unit A</option>
+                  <option>Unit B</option>
+                  <option>Unit C</option>
+              </select>
+          </div>
       </div>
-
-      <div>
-          <label for="graphDatabase">Select Database:</label>
-          <select id="graphDatabase">
-              <option>Database A</option>
-              <option>Database B</option>
-              <option>Database C</option>
-          </select>
-      </div>
-
-      <div>
-          <label for="graphTable">Select Table:</label>
-          <select id="graphTable">
-              <option>Table X</option>
-              <option>Table Y</option>
-              <option>Table Z</option>
-          </select>
-      </div>
-
-      <div>
-          <label for="graphSensor">Select Sensor:</label>
-          <select id="graphSensor">
-              <option>Sensor 1</option>
-              <option>Sensor 2</option>
-              <option>Sensor 3</option>
-          </select>
-      </div>
-
-      <div>
-          <label for="graphUnit">Choose Unit:</label>
-          <select id="graphUnit">
-              <option>Unit A</option>
-              <option>Unit B</option>
-              <option>Unit C</option>
-          </select>
+      <div class="graph-actions">
+          <button class="graph-submit-button" onclick="graphCreatePlot()">Create Graph</button>
+          <button class="graph-add-button" onclick="addNewGraphSlot()">Add Graph Slot</button>
       </div>
   </div>
+  
+</div>
+<div id="graphContainer" class="graph-container">
+  <!-- Graphs will be dynamically added here -->
+</div>
 
-  <button onclick="graphCreatePlot()" class="graph-submit-button">Submit</button>
-
-  <div id="graphMainContainer"></div>
-
-  <div class="graph-toolbar" id="graphEditToolbar" style="display: none;">
-      <button onclick="graphEditName()">Edit Graph Name</button>
-      <button onclick="graphEditScaleAndUnit()">Edit Scale/Unit</button>
-      <button onclick="graphEditType()">Edit Graph Type</button>
-      <button onclick="graphLabelAxis()">Label Axis</button>
-      <button onclick="graphDeletePlot()">Delete Graph</button>
-  </div>
-</body>
-
-          
-<hr>
-
+  <!-- ends hrere -->
 
 
 
