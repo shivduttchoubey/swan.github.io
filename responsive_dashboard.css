@@ -1002,3 +1002,43 @@ body::-webkit-scrollbar-thumb {
 
 
 /* Graph Styling component Ends here */
+
+
+/* Button for sign in and sign out starts here */
+.button-container {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.sign-in {
+  background-color: #28a745;
+  color: white;
+}
+
+.sign-in:hover {
+  background-color: #218838;
+}
+
+.sign-out {
+  background-color: #dc3545;
+  color: white;
+}
+
+.sign-out:hover {
+  background-color: #c82333;
+}
+
+/* Button for sign in and sign out ends here */
