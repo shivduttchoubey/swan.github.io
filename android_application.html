@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Android App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #e8efff, #d7e1fc);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .header {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .header p {
+            font-size: 1.3rem;
+            font-weight: 400;
+        }
+
+        .description-section {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .description-section h3 {
+            font-size: 2rem;
+            color: #6a11cb;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .description-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            text-align: center;
+        }
+
+        .download-section {
+            margin-top: 2rem;
+        }
+
+        .download-section .btn {
+            font-size: 1.3rem;
+            font-weight: 600;
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .download-section .btn:hover {
+            background: linear-gradient(90deg, #2575fc, #6a11cb);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 1.5rem;
+            background: #6a11cb;
+            color: white;
+            border-radius: 10px;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="header animate__animated animate__fadeInDown">
+        <h1>Download Our Android App</h1>
+        <p>Transform the way you connect with technology and IoT Devices. Download now and get started!</p>
+    </div>
+
+    <!-- Description Section -->
+    <div class="container description-section mt-5">
+        <h3>Why Choose Our App?</h3>
+        <p>
+            Our Android app is designed to offer a powerful, user-friendly experience. With seamless connectivity, advanced features, 
+            and robust security, it’s tailored for a better and holistic experience of viewing the data of your edge devices and sensors at different locations.<br><br> Be part of the future and elevate your experience with our app.
+        </p>
+    </div>
+
+    <!-- Download Section -->
+    <div class="container download-section text-center mt-4">
+        <button class="btn" onclick="window.location.href='download/android-app.apk'">
+            Download Now
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer mt-5 animate__animated animate__fadeInUp">
+        <p>A <strong>SWAN LAB Initiative</strong>. All rights reserved © 2025</p>
+    </div>
+
+    <script>
+        // GSAP Animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.querySelector('.header');
+            const description = document.querySelector('.description-section');
+            const footer = document.querySelector('.footer');
+            gsap.fromTo(header, { opacity: 0, y: -50 }, { opacity: 1, y: 0, duration: 1 });
+            gsap.fromTo(description, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1, delay: 0.5 });
+            gsap.fromTo(footer, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1, delay: 1 });
+        });
+    </script>
+</body>
+</html>
