@@ -326,3 +326,11 @@ function graphDeletePlot(graphId) {
     // Remove the entire graph slot
     removeGraphSlot(graphSlot.id);
 }
+
+
+
+// Script for time at right column of dashboard
+function updateDateTime() {
+    document.getElementById('dateTime').textContent = new Date().toLocaleString();
+  }
+  setInterval(updateDateTime, 1000);
