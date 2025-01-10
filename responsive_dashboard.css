@@ -14,6 +14,13 @@
   --border-color: rgba(131, 135, 193, 0.4);
   --shadow-color: rgba(0, 0, 0, 0.05);
   --accent-color: rgb(194, 33, 105);
+  --menu-width-desktop: 180px;
+  --menu-width-tablet: 150px;
+  --menu-width-mobile: 70px;
+  --border-color: #e1e1e1;
+  --primary-color: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --transition-speed: 0.3s ease;
 }
 
 .darkmode {
@@ -56,6 +63,7 @@ ul li {
 
 ul li a {
   text-decoration: none;
+  color: white;
 }
 
 img {
@@ -77,37 +85,40 @@ body {
   background: var(--bg-body);
   overflow: hidden;
 }
-
 /* MAIN MENU */
-
 .main-menu {
   position: fixed;
   top: 0;
   left: 0;
-  width: 180px;
-  height: 100%;
+  width: var(--menu-width-desktop);
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   border-right: 1px solid var(--border-color);
-  padding: 12px 0 10px;
-  overflow: hidden;
+  padding: clamp(8px, 2vw, 12px) 0;
+  overflow-y: auto;
+  overflow-x: hidden;
   font-family: inherit;
+  transition: width var(--transition-speed);
+  background: inherit;
 }
 
 .user-info {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5px;
+  gap: clamp(3px, 1vw, 5px);
+  padding: 0 10px;
 }
 
 .user-info img {
-  max-width: 160px;
+  width: clamp(80px, calc(100% - 40px), 160px);
   aspect-ratio: 1/1;
   object-fit: cover;
   border-radius: 50%;
-  padding: 20px;
+  padding: clamp(10px, 5%, 20px);
+  transition: width var(--transition-speed);
 }
 
 .user-info p {
@@ -116,22 +127,25 @@ body {
   font-weight: 500;
   text-align: center;
   line-height: 1.3;
-  margin: -15px 0 30px;
+  margin: -15px 0 clamp(15px, 5vh, 30px);
+  transition: opacity var(--transition-speed);
 }
 
 .nav-item {
   display: block;
+  width: 100%;
 }
 
 .nav-item a {
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: var(--primary-color);
-  font-size: 1rem;
-  padding: 12px 0;
+  justify-content: flex-start;
+  color: white;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  padding: clamp(8px, 2vh, 12px) clamp(8px, 2vw, 12px);
   margin: 0 8px;
   border-radius: 5px;
+  transition: all var(--transition-speed);
 }
 
 .nav-item.active a {
@@ -141,9 +155,12 @@ body {
 }
 
 .nav-icon {
-  width: 40px;
+  min-width: 40px;
   height: 20px;
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav-text {
@@ -151,6 +168,85 @@ body {
   width: 70px;
   height: 20px;
   letter-spacing: 0;
+  color: white;
+  white-space: nowrap;
+  transition: opacity var(--transition-speed);
+}
+
+/* Tablet Styles */
+@media screen and (max-width: 1024px) {
+  .main-menu {
+    width: var(--menu-width-tablet);
+  }
+  
+  .user-info p {
+    font-size: 0.9rem;
+  }
+  
+  .nav-item a {
+    padding: 10px 6px;
+  }
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+  .main-menu {
+    width: var(--menu-width-mobile);
+  }
+  
+  .user-info p {
+    opacity: 0;
+    height: 0;
+    margin: 0;
+  }
+  
+  .user-info img {
+    width: 50px;
+    padding: 5px;
+  }
+  
+  .nav-text {
+    opacity: 0;
+    width: 0;
+  }
+  
+  .nav-item a {
+    justify-content: center;
+    padding: 12px 0;
+  }
+  
+  .nav-icon {
+    min-width: 30px;
+  }
+}
+
+/* Handle height-based responsive design */
+@media screen and (max-height: 600px) {
+  .main-menu {
+    padding: 5px 0;
+  }
+  
+  .user-info img {
+    width: 60px;
+    padding: 5px;
+  }
+  
+  .user-info p {
+    font-size: 0.8rem;
+    margin: -10px 0 15px;
+  }
+  
+  .nav-item a {
+    padding: 8px 0;
+  }
+}
+
+/* Hover effects for desktop */
+@media (hover: hover) {
+  .nav-item a:hover {
+    background: rgba(106, 109, 155, 0.2);
+    transform: translateX(2px);
+  }
 }
 
 /* CONTENT */
@@ -1164,3 +1260,5 @@ button:hover {
     height: 44px;
   }
 }
+
+
