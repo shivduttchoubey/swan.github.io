@@ -1042,3 +1042,125 @@ button:hover {
 }
 
 /* Button for sign in and sign out ends here */
+/* Enhanced Dashboard Animations and Responsiveness - Add at the end of responsive_dashboard.css */
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes cardFloat {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Enhanced Card Animations */
+.event-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px var(--shadow-color);
+}
+
+/* Analytics Cards Enhancement */
+.event-number {
+  animation: cardFloat 4s ease-in-out infinite;
+}
+
+.event-number:hover {
+  transform: scale(1.02);
+}
+
+/* Navigation Enhancements */
+.nav-item {
+  animation: slideIn 0.5s ease-out;
+  animation-fill-mode: backwards;
+}
+
+.nav-item:nth-child(1) { animation-delay: 0.1s; }
+.nav-item:nth-child(2) { animation-delay: 0.2s; }
+.nav-item:nth-child(3) { animation-delay: 0.3s; }
+.nav-item:nth-child(4) { animation-delay: 0.4s; }
+
+/* Search Box Enhancement */
+.search-box input {
+  transition: all 0.3s ease;
+}
+
+.search-box input:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+/* Graph Component Enhancements */
+.graph-dashboard-container {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.graph-slot {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.graph-slot:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px var(--shadow-color);
+}
+
+/* Enhanced Mobile Menu */
+@media (max-width: 768px) {
+  .main-menu {
+    transition: width 0.3s ease;
+  }
+  
+  .nav-text {
+    transition: opacity 0.3s ease;
+  }
+  
+  /* Improved mobile nav interaction */
+  .main-menu:hover {
+    width: 180px;
+  }
+  
+  .main-menu:hover .nav-text {
+    opacity: 1;
+    display: block;
+  }
+}
+
+/* Loading State Animation */
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+.loading {
+  background: linear-gradient(90deg, 
+    var(--card-bg-color) 0%, 
+    rgba(169, 150, 253, 0.1) 50%, 
+    var(--card-bg-color) 100%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite linear;
+}
+
+/* Improved Touch Targets for Mobile */
+@media (max-width: 480px) {
+  .nav-item a,
+  .event-footer button,
+  .graph-controls button {
+    min-height: 44px;
+    padding: 12px;
+  }
+  
+  .search-box input {
+    height: 44px;
+  }
+}

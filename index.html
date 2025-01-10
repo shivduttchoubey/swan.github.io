@@ -1,496 +1,105 @@
+
+<!-- Acts as a welcome screen after Authentication and before showing the dashboard -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SWAN Custom Dashboard</title>
-    <link rel="stylesheet" href="responsive_dashboard.css">
-    <script src="responsive_dashboard.js"></script>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!--Script for Graph Component-->
-</head>
-
-<!-- Left Starts -->
-<body class="darkmode">
-    <nav class="main-menu">
-      <div>
-        <div class="user-info">
-         &nbsp;&nbsp; <a href="welcome.html"> Animation</a>
-        
-        <!--User profile Image -->
-        <img src="smsir.jpeg" alt="user" />
-        <!--User Name--> 
-        <p>User Name</p>
-        
-        </div>
-        <ul>
-          <li class="nav-item active">
-            <a href="profile.html">
-              <span class="nav-text">Profile</span>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="mqtt-connections.html" target="_blank">
-              <span class="nav-text">Add MQTT Connections</span>
-            </a><br><br>
-          </li>
-
-          <li class="nav-item">
-            <a href="external_db.html">
-            <span class="nav-text">External Database Connector</span>
-            </a>
-          </li><br><br> 
-
-          <li class="nav-item">
-            <a href="https://docs.google.com/document/d/e/2PACX-1vRVuySgsy19I5JAjR-6950KBK0r0ybb9YgP3E6F38neSVk2L8oUFkz2SNXECryOOKSMjaz6t6UhorSm/pub" target="blank">
-          <span class="nav-text">Documentation</span>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="android_application.html" target="blank">
-             <span class="nav-text">Android Application</span>
-            </a>
-          </li><br>
-
-          <li class="nav-item">
-            <a href="developer_section.html" target="blank">
-              <span class="nav-text">Developer Section</span>
-            </a>
-          </li>
-      <br>
-          <li class="nav-item">
-          <a href="https://cse.iitkgp.ac.in/~smisra/swan/" target="blank">
-            <span class="nav-text">SWAN Lab</span>
-          </a>
-        </li>
-<br>
-        <li class="nav-item">
-          <a href="#" target="blank">
-            <span class="nav-text">Logout</span>
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a href="#">
-            <span class="nav-text">&copy; 2025</span>
-          </a>
-        </li>
-        
-        
-      
-      </ul>
-        
-      </div>
-    </nav>
-<!-- Left ends -->
-
-
-<!-- Center Starts -->
-     <section class="content">
-      <div class="left-content">
-        <div class="search-and-check">
-          <form class="search-box">
-            <input type="text" placeholder="Search for your Dashboard..." />
-            <i class="bx bx-search"></i>
-          </form>
-          <div class="interaction-control-mobile interactions">
-            </div>
-        </div>
-<!-- Below two picture tags are for the logo of SWAN and the first tag has logo for light theme and the other has logo for dark theme -->
- <!-- The Three Images in a div are for different devices such as mobile tablet and desktop -->
-        <div class="header">
-          <picture class="morning-img hidden">
-            <img
-              class="header-mobile"
-              src="SWAN-Logo (Custom mobile).png"
-              alt="" />
-              <!--622 x 378-->
-            <img
-              class="header-tablet"
-              src="SWAN-Logo (Custom tablet).png"
-              alt="" />
-              <!-- 925 x 508 -->
-            <img
-              class="header-desktop"
-              src="SWAN-Logo (Custom laptop).png"
-              alt="" />
-              <!-- 1500 x 508 -->
-          </picture>
-
-          <picture class="night-img">
-            <img
-              class="header-mobile"
-              src="SWAN-Logo (Custom mobile).png"
-              alt="" />
-            <img
-              class="header-tablet"
-              src="SWAN-Logo (Custom tablet).png"
-              alt="" />
-            <img
-              class="header-desktop"
-              src="SWAN-Logo (Custom laptop).png"
-              alt="" />
-          </picture>
-        </div>
-
-        <div class="upcoming-events">
-          <h1>Dashboards</h1>
-          <div class="event-container">
-
-
-            <!-- <div class="card event-card">
-              <div class="event-header">
-                <img
-                  src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/697ef286-1104-4c6c-91d6-0b2a1e04009b"
-                  alt="" />
-                <p>March 19, 8:00 PM</p>
-                <i class="bx bx-heart like-btn"></i>
-              </div>
-              <div class="event-content">
-                <h2>Acoustic Serenade Under the Stars</h2>
-                <p>Skyline Amphitheater</p>
-              </div>
-              <div class="event-footer">
-                <p style="background-color: #e48e2c">Concert</p>
-                <div class="btn-group">
-                  <button>Buy Ticket</button>
-                  <div class="share">
-                    <button class="share-btn">
-                      <i class="fa-solid fa-share"></i>
-                    </button>
-                    <ul class="popup">
-                      <li>
-                        <a href="#" style="color: rgb(79, 153, 213)"
-                          ><i class="bx bxl-twitter"></i
-                        ></a>
-                      </li>
-                      <li>
-                        <a href="#" style="color: rgb(34, 173, 34)"
-                          ><i class="bx bxl-whatsapp"></i
-                        ></a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-
-
-         <div class="card event-card">
-              <div class="event-header">
-                <img
-                  src="default_graph.png"
-                  alt="Graph">
-                <p>March 19, 8:00 PM</p>
-                <i class="bx bx-heart like-btn"></i>
-              </div>
-              <div class="event-content">
-                <h2>Dashboard 1</h2>
-                <p>Skyline Amphitheater</p>
-              </div>
-              <div class="event-footer">
-                <p style="background-color: #e48e2c">Edit</p>
-                <div class="btn-group">
-                  <button>Resize</button>
-                  </div>
-              </div>
-            </div>
-
-            <div class="card event-card">
-              <div class="event-header">
-                <img
-                  src="default_graph.png"
-                  alt="Graph">
-                <p>March 19, 8:00 PM</p>
-                <i class="bx bx-heart like-btn"></i>
-              </div>
-              <div class="event-content">
-                <h2>Dashboard 2</h2>
-                <p>Skyline Amphitheater</p>
-              </div>
-              <div class="event-footer">
-                <p style="background-color: #e48e2c">Edit</p>
-                <div class="btn-group">
-                  <button>Resize</button>
-                  </div>
-              </div>
-            </div>
-
-            <div class="card event-card">
-              <div class="event-header">
-                <img
-                  src="default_graph.png"
-                  alt="Graph">
-                <p>March 19, 8:00 PM</p>
-                <i class="bx bx-heart like-btn"></i>
-              </div>
-              <div class="event-content">
-                <h2>Dashboard 3</h2>
-                <p>Skyline Amphitheater</p>
-              </div>
-              <div class="event-footer">
-                <p style="background-color: #e48e2c">Edit</p>
-                <div class="btn-group">
-                  <button>Resize</button>
-                  </div>
-              </div>
-            </div>
-
-            <div class="card event-card">
-              <div class="event-header">
-                <img
-                  src="default_graph.png"
-                  alt="Graph">
-                <p>March 19, 8:00 PM</p>
-                <i class="bx bx-heart like-btn"></i>
-              </div>
-              <div class="event-content">
-                <h2>Dashboard 4</h2>
-                <p>Skyline Amphitheater</p>
-              </div>
-              <div class="event-footer">
-                <p style="background-color: #e48e2c">Edit</p>
-                <div class="btn-group">
-                  <button>Resize</button>
-                  </div>
-              </div>
-            </div>
-
-            <div class="card event-card">
-              <div class="event-header">
-                <img
-                  src="default_graph.png"
-                  alt="Graph">
-                <p>March 19, 8:00 PM</p>
-                <i class="bx bx-heart like-btn"></i>
-              </div>
-              <div class="event-content">
-                <h2>Dashboard 5</h2>
-                <p>Skyline Amphitheater</p>
-              </div>
-              <div class="event-footer">
-                <p style="background-color: #e48e2c">Edit</p>
-                <div class="btn-group">
-                  <button>Resize</button>
-                  </div>
-              </div>
-            </div>
-
-           
-
-
-<br>
-<!-- Graph Parameter Selection -->
-<div class="graph-dashboard-container">
-  <div class="graph-controls">
-      <div class="graph-selector-container">
-          <div>
-              <label for="graphLocation">Select Location:</label>
-              <select id="graphLocation">
-                  <option>Location 1</option>
-                  <option>Location 2</option>
-                  <option>Location 3</option>
-              </select>
-          </div>
-          <div>
-              <label for="graphDatabase">Select Database:</label>
-              <select id="graphDatabase">
-                  <option>Database A</option>
-                  <option>Database B</option>
-                  <option>Database C</option>
-              </select>
-          </div>
-          <div>
-              <label for="graphTable">Select Table:</label>
-              <select id="graphTable">
-                  <option>Table X</option>
-                  <option>Table Y</option>
-                  <option>Table Z</option>
-              </select>
-          </div>
-          <div>
-              <label for="graphSensor">Select Sensor:</label>
-              <select id="graphSensor">
-                  <option>Sensor 1</option>
-                  <option>Sensor 2</option>
-                  <option>Sensor 3</option>
-              </select>
-          </div>
-          <div>
-              <label for="graphUnit">Choose Unit:</label>
-              <select id="graphUnit">
-                  <option>Unit A</option>
-                  <option>Unit B</option>
-                  <option>Unit C</option>
-              </select>
-          </div>
-      </div>
-      <div class="graph-actions">
-          <button class="graph-submit-button" onclick="graphCreatePlot()">Create Graph</button>
-          <button class="graph-add-button" onclick="addNewGraphSlot()">Add Graph Slot</button>
-      </div>
-  </div>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HELLO Animation</title>
+  <link rel="stylesheet" href="styles.css">
   
-</div>
-<div id="graphContainer" class="graph-container">
-  <!-- Graphs will be dynamically added here -->
-</div>
+  <!-- Redirect after 3 seconds -->
+  <script>
+    setTimeout(() => {
+      window.location.href = "charging_the_dashboard_animation.html"; // Replace with your desired URL
+    }, 3000);
+  </script>
 
-  <!-- ends hrere -->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #fff; /* Background color */
+    overflow: hidden;
+    font-family: "Poppins", sans-serif;
+  }
 
+  h1 {
+    position: relative;
+    color: #f6d8d5;
+    font-size: 10vw; /* Responsive font size */
+    text-align: center;
+    margin: 0.5em 0;
+  }
 
+  h1::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0em;
+    left: 0em;
+    color: #313f97;
+    z-index: -1;
+    transition: 0.2s;
+  }
 
+  h1:hover::before {
+    top: 0.04em;
+    left: 0.04em;
+  }
 
-          </div>
-        </div>
-        </div>
-      </div>
+  h1::after {
+    content: attr(data-text);
+    position: absolute;
+    color: transparent;
+    top: 0em;
+    left: 0em;
+    background-image: radial-gradient(rgba(236, 34, 37, 0.5) 0.0125em, transparent 0.0125em);
+    background-size: 8px 8px;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-stroke: 1px #ec2225;
+    transition: 0.2s;
+  }
 
+  h1:hover::after {
+    top: -0.04em;
+    left: -0.04em;
+  }
 
-<!-- center ends -->
+  /* Media Queries for different screen sizes */
+  @media (max-width: 768px) { /* Tablets and smaller screens */
+    h1 {
+      font-size: 12vw;
+    }
+  }
 
-<!-- Right Starts -->
-      <div class="right-content">
-        <div class="interaction-control interactions">
-        </div>
+  @media (max-width: 480px) { /* Mobile devices */
+    h1 {
+      font-size: 14vw;
+    }
+    body {
+      padding: 0 1em;
+      text-align: center;
+    }
+  }
 
-        <div class="analytics">
-          <!-- Button for sign in and sign out
-       <div class="button-container">
-        <button class="sign-in">Sign In</button>
-        <button class="sign-out">Sign Out</button>
-      </div> -->
-      <div style="font-family: Arial, sans-serif; text-align: center; margin-top: 5px;">
-      <h1 style="color: teal;">Current Date and Time</h1>
-      <div style="display: inline-flex; align-items: center; gap: 5px; font-size: 1.2em; color: gray;">
-            <span id="dateTime">Loading...</span>
-            <svg width="20" height="20" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="50" cy="50" r="45" stroke="teal" stroke-width="5" fill="none" />
-              <line x1="50" y1="50" x2="50" y2="30" stroke="teal" stroke-width="3" stroke-linecap="round" />
-              <line x1="50" y1="50" x2="65" y2="50" stroke="teal" stroke-width="3" stroke-linecap="round" />
-            </svg>
-      </div>
-      </div>
+</style>
 
-
-
-      <br>
-      <hr>    
-          <h1>Analytics</h1>
-          <div class="analytics-container">
-            <div class="total-events">
-              <div class="event-number card">
-                <h2>Number of Dashboards</h2>
-                <p>20</p>
-                <i class="bx bx-check-circle"></i>
-              </div>
-              <div class="event-number card">
-                <h2>Number of MQTT Connections to Database</h2>
-                <p>3</p>
-                <i class="bx bx-timer"></i>
-              </div>
-            </div>
-            <br>
-            <div class="total-events">
-              <div class="event-number card">
-                <h2>Number of External Databases Connected</h2>
-                <p>20</p>
-                <i class="bx bx-check-circle"></i>
-              </div>
-              <div class="event-number card">
-                <h2>QR Code</h2>
-                <p>Scan to view</p>
-                <!-- <i class="bx bx-timer"></i> -->
-                 <img class="qrcode" src="qrcode.png" alt="QR Code">
-              </div>
-            </div>
-            <br>
-            <hr>
-            <div class="chart" id="doughnut-chart">
-              <h2>Your Dashboards</h2>
-              <!-- <canvas id="doughnut"></canvas> -->
-              <ul>
-                <li><a href="https://example.com/dashboard1" target="blank">Dashboard 1</a></li>
-                <li><a href="https://example.com/dashboard2" target="blank">Dashboard 2</a></li>
-                <li><a href="https://example.com/dashboard3" target="blank">Dashboard 3</a></li>
-                <li><a href="https://example.com/dashboard4" target="blank">Dashboard 4</a></li>
-                <li><a href="https://example.com/dashboard5" target="blank">Dashboard 5</a></li>
-                <li><a href="https://example.com/dashboard6" target="blank">Dashboard 6</a></li>
-                <li><a href="https://example.com/dashboard7" target="blank">Dashboard 7</a></li>
-                <li><a href="https://example.com/dashboard8" target="blank">Dashboard 8</a></li>
-                <li><a href="https://example.com/dashboard9" target="blank">Dashboard 9</a></li>
-                <li><a href="https://example.com/dashboard10" target="blank">Dashboard 10</a></li>
-                <li><a href="https://example.com/dashboard11" target="blank">Dashboard 11</a></li>
-                <li><a href="https://example.com/dashboard12" target="blank">Dashboard 12</a></li>
-                <li><a href="https://example.com/dashboard13" target="blank">Dashboard 13</a></li>
-                <li><a href="https://example.com/dashboard14" target="blank">Dashboard 14</a></li>
-                <li><a href="https://example.com/dashboard15" target="blank">Dashboard 15</a></li>
-                <li><a href="https://example.com/dashboard16" target="blank">Dashboard 16</a></li>
-                <li><a href="https://example.com/dashboard17" target="blank">Dashboard 17</a></li>
-                <li><a href="https://example.com/dashboard18" target="blank">Dashboard 18</a></li>
-                <li><a href="https://example.com/dashboard19" target="blank">Dashboard 19</a></li>
-                <li><a href="https://example.com/dashboard20" target="blank">Dashboard 20</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <hr>
-        <!--Loads log file from server for specific user-->
-        <div class="contacts">
-            <h1>Activity Log</h1>
-            <div class="contacts-container">
-              <div class="contact-status">
-                <div class="contact-activity">
-                  <p>John viewed <span>Temperature Sensor Data</span></p>
-                </div>
-                <small>1 hour ago</small>
-              </div>
-          
-              <div class="contact-status">
-                <div class="contact-activity">
-                  <p>Emma analyzed <span>Humidity Trends Dashboard</span></p>
-                </div>
-                <small>4 hours ago</small>
-              </div>
-          
-              <div class="contact-status">
-                <div class="contact-activity">
-                  <p>Michael downloaded <span>Daily Power Usage Report</span></p>
-                </div>
-                <small>1 day ago</small>
-              </div>
-          
-              <div class="contact-status">
-                <div class="contact-activity">
-                  <p>Sophia explored <span>Live Motion Detection Feed</span></p>
-                </div>
-                <small>1 day ago</small>
-              </div>
-          
-              <div class="contact-status">
-                <div class="contact-activity">
-                  <p>David viewed <span>Air Quality Index Data</span></p>
-                </div>
-                <small>3 days ago</small>
-              </div>
-          
-              <div class="contact-status">
-                <div class="contact-activity">
-                  <p>Olivia exported <span>Historical Sensor Data Logs</span></p>
-                </div>
-                <small>6 days ago</small>
-              </div>
-            </div>
-          </div>
-      </div>
-    </section>
-
-    <!-- Right ends -->
-
-    
-  </body>
+</head>
+<body>
+<!-- Since it is to be shown after Authentication the username can be added over here to give a personalised feel... -->
+  <h1 data-text="HELLO!">HELLO!</h1>
+  <h1 style="font-size: 5vw;">Welcome to your Custom Dashboard</h1>
+</body>
 </html>
